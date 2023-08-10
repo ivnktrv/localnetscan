@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-logo = '''\033[92m
+LOGO = '''\033[92m
                                                        _____
     __         ______   ______   ________  __          |   |               ___   ___  ________  ____________
     | |       /  __  \ /  ____| /  ____  \ | |         ¯¯|¯¯        _____  |  \  |  | |  _____| |____  ____|
@@ -56,15 +56,15 @@ except json.decoder.JSONDecodeError:
     input('\n['+'\033[91m'+'-'+'\033[0m'+'] Неверное значение в'+'\033[93m '+'localnetscan-config.json'+'\033[0m')
     exit()
 if configFile["logo"] is True:
-    print(logo)
+    print(LOGO)
 elif configFile["logo"] is False:
     pass
 else:
     pass
 
-targetIP = input('Укажите ip или его диапозон -> ')
+TARGETIP = input('Укажите ip или его диапозон -> ')
 
-if targetIP == 'help':
+if TARGETIP == 'help':
     input('''
 В строке, где просят ввести IP или его диапозон, надо ввести ip адрес целовой машины
 (например: 1.1.1.1). Если укажите диапозон IP адресов, то программа просканирует
@@ -122,4 +122,4 @@ def _netscan(ip):
     except PermissionError:
         input('\n['+'\033[91m'+'-'+'\033[0m'+'] Скрипт выполняется от'+'\033[93m '+'root'+'\033[0m')
 
-_netscan(targetIP)
+_netscan(TARGETIP)
